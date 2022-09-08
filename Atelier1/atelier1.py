@@ -1,4 +1,5 @@
 from random import  randint
+import datetime
 
 # exercice 1
 def message_imc(weight: int, height: int) -> float:
@@ -53,7 +54,46 @@ def test_solutions() -> None:
             break
         print(solution_equation(a, b, c))
 
-test_solutions()
+# test_solutions()
 
 # exercice 4
-def date_est_valide(jour, mois, annee):
+def date_est_valide(jour: int, mois: int, annee: int) -> bool:
+    if annee_bissextile(annee):
+        if mois == 2:
+            if jour > 29:
+                return False
+    else:
+        if mois == 2:
+            if jour > 28:
+                return False
+    if mois % 2 == 0:
+        if jour > 30:
+            return False
+    else:
+        if jour > 31:
+            return False
+    if mois > 12:
+        return False
+    if annee > 2022:
+        return False
+    return True
+
+def saisie_date_naissance() -> datetime:
+    jour = int(input('Jour: '))
+    mois = int(input('Mois: '))
+    annee = int(input('Annee: '))
+    return datetime.datetime(annee, mois, jour)
+
+def age(date_naissance: datetime) -> int:
+    return (datetime.datetime.today() - date_naissance).days // 365
+
+def est_majeur(date_naissance: datetime) -> bool:
+    return age(date_naissance) >= 18
+
+def test_acces():
+    date = saisie_date_naissance()
+    age1 = age(date)
+    if est_majeur(date):
+        print(f"Bonjour, vous avez {age1} ans, Accès autorisé")
+    else:
+        print()
