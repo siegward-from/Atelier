@@ -85,5 +85,3 @@ if __name__ == '__main__':
     test_sup_functions(moy_sup, 'Test moy_sup')
     test_exercice1(val_max, 'Test val_max')
     test_exercice1(ind_max, 'Test ind_max')
-
-# 08/09/2022 11:10

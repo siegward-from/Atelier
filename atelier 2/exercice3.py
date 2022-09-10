@@ -10,5 +10,3 @@ def separer(l: list) -> list:
 
 if __name__ == '__main__':
     print('test [-1, 1, -5, 5, -10, 10, 0]:', separer([-10, -5, -1, 0, 1, 5, 10]))
-
-# 14 00

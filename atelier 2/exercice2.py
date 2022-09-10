@@ -87,6 +87,3 @@ if __name__ == '__main__':
     test2(est_triee1, 'test est_triee1')
     test2(est_triee2, 'test est_triee2')
     test2(a_repetitions, 'test a_repetitions')
-
-
-# 11 30

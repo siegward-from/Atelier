@@ -76,4 +76,3 @@ def affiche_histo1(f: list[int]) -> None:
 
 
 affiche_histo1(F)
-# 15 50
