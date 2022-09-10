@@ -67,8 +67,7 @@ F = [1, 5, 5, 5, 9, 11, 11, 15, 15, 15]
 affiche_histo(F)
 
 
-# 15 40
-# question 3 15 50
+# question 3
 def affiche_histo1(f: list[int]) -> None:
     plt.hist(f)
     plt.title('Histogramme avec MatPlotLib')
