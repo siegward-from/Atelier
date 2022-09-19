@@ -1,27 +1,27 @@
 from exercice2 import nb_occurrences
-from exercice2 import position_tri
 
 
 def agencement(objets: list[int], emplacements: int) -> (list[int], list[int]):
-    l = []
+    list_ = []
+
     # déplacer de tous les objets dupliqués de la première liste vers la seconde
     for e in objets:
         if nb_occurrences(objets, e) > 1:
-            pos = position_tri(objets, e)
-            l.append(objets.pop(pos))
+            objets.remove(e)
+            list_.append(e)
+
     # si la première liste contient encore trop d'objets,
-    # déplacez les objets dans la deuxième liste s'ils ne sont pas dupliqués
+    # creer une nouvelle liste avec les objets qu'il faut deplacer
     if len(objets) > emplacements:
-        i = 0
-        while len(objets) > emplacements:
-            if objets[i] not in l:
-                l.append(objets.pop(i))
-            else:
-                i += 1
+        el_to_move = [el for el in objets if el not in list_]
+        el_to_move = el_to_move[:len(objets) - emplacements]
+        for el in el_to_move:
+            objets.remove(el)
+            list_.append(el)
 
-    if len(l) > emplacements:
+    if len(list_) > emplacements:
         return False
-    return objets, l
+    return objets, list_
 
 
-print(agencement([1, 2, 2, 3, 4, 5, 5], 4))
+print(agencement([1, 3, 4, 5, 2, 2, 0, 0], 4))

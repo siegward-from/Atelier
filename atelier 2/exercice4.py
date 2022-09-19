@@ -37,19 +37,21 @@ print(f'test {F2}', est_surjective(F2), '\n')
 
 
 # question 2
+def positions(l: list[int], e: int) -> list[int]:
+    result = []
+    for i in range(len(l)):
+        if l[i] >= e:
+            result.append(i)
+    return result
+
+
 def affiche_histo(f: list[int]) -> None:
-    def positions(l: list[int], e: int) -> list[int]:
-        result = []
-        for i in range(len(l)):
-            if l[i] >= e:
-                result.append(i)
-        return result
-    print('TEST HISTOGRAMME\n')
-    print(f'F = {f}\n')
+    print('TEST HISTOGRAMME')
+    print(f'F = {f}')
     print('HISTOGRAMME')
     l = histo(f)
     value = val_max(f)
-    # afficher tous les caractères #
+    # afficher tous les symboles '#'
     for i in range(val_max(l), 0, -1):
         line = '   ' * value
         for p in positions(l, i):

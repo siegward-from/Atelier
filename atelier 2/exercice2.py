@@ -15,7 +15,7 @@ def position2(l: list, e: int) -> int:
     return -1
 
 
-def nb_occurrences(l: list, e: int) -> int:
+def nb_occurrences(l: list[int], e: int) -> int:
     result = 0
     for e1 in l:
         if e1 == e:
@@ -37,7 +37,8 @@ def est_triee2(l: list) -> bool:
             next_value = l.pop(0)
             if value > next_value:
                 return False
-            value = next_value
+            else:
+                value = next_value
     return True
 
 

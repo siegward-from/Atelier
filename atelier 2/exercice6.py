@@ -21,7 +21,7 @@ def test_present(present: callable) -> None:
     else:
         print("test milieu: ECHEC")
     if not present([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 10):
-        print("test abscence: SUCCES")
+        print("test abscence: SUCCES \n")
     else:
         print("test abscence: ECHEC \n")
 
@@ -69,10 +69,11 @@ def present4(l, e):
 
 
 l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-print(present1(l, 1))
-print(present2(l, 1))
-print(present3(l, 1))
-print(present4(l, 1), '\n')
+print('test presents [0, 1, 2, 3, 4, 5, 6, 7, 8, 9], 1')
+print("test preesent1: ", present1(l, 1))
+print("test preesent2: ", present2(l, 1))
+print("test preesent3: ", present3(l, 1))
+print("test preesent4: ", present4(l, 1), '\n')
 
 
 # question 3
@@ -185,3 +186,5 @@ test_pos(pos1, 'test pos1')
 test_pos(pos2, 'test pos2')
 test_pos(pos3, 'test pos3')
 test_pos(pos4, 'test pos4')
+
+
